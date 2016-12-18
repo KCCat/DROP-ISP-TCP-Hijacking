@@ -12,6 +12,6 @@ __注意__ :此操作会重置`iptables`所有表.
 * Module mark
 
 ##工作原理
-* 对每条TCP连接在握手时的SYN+ACK包的TTL值和MSS协商值.
-* 并使用 TCP flags 标志为 ACK|ACK&&PSH ,且 TCP Data 长度为0或长度为MSS协商值的包对保存的TTL值更新.
-* 其余包在不符合TTL值时将被DROP.
+* 对每条`TCP`连接在握手时的`SYN+ACK`包的`TTL`值和`MSS`协商值.
+* 并使用`TCP flags`标志为`ACK|ACK&&PSH`,且`TCP Data`长度为0或长度为`MSS`协商值的包对保存的`TTL`值更新.
+* 其余包在不符合`TTL`值时将被`DROP`.
