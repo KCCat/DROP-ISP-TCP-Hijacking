@@ -7,10 +7,12 @@ __注意:目前仍在实验阶段,无法保证不会对正常的连接产生破�
 __注意__ :此操作会重置`iptables`所有表. 
 
 ##需求
-* Module bpf
-* Module u32
-* Module connmark
-* Module mark
+* Module `bpf`
+* Module `u32`
+* Module `connmark`
+* Module `mark`
+* `connmark`的标志位需要`0x7FF`长度来记录MSS值,还有`0xFF`来记录TTL值.默认记录位置为`0x07FF00FF`.
+* `mark`的标志位需要`0x1`长度.默认记录位置为`0x00000001`.
 
 ##工作原理
 * 对每条`TCP`连接在握手时的`SYN+ACK`包的`TTL`值和`MSS`协商值.
